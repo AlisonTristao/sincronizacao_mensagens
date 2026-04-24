@@ -11,20 +11,15 @@ enum class logType : uint8_t {
     ERROR,
     DEBUG,
     PAKG,
-    // Legacy aliases kept for compatibility with older naming.
-    CMDO = CMD,
-    TELE = TELEMETRY,
-    ERRO = ERROR,
-    DEBG = DEBUG
 };
 
 inline constexpr const char* logTypeToString(logType type) {
     switch (type) {
         case logType::INFO: return "INFO";
-        case logType::CMD: return "CMD";
-        case logType::TELEMETRY: return "TELEMETRY";
-        case logType::ERROR: return "ERROR";
-        case logType::DEBUG: return "DEBUG";
+        case logType::CMD: return "CMDO";
+        case logType::TELEMETRY: return "TELE";
+        case logType::ERROR: return "ERRO";
+        case logType::DEBUG: return "DEBG";
         case logType::PAKG: return "PAKG";
         case logType::NONE:
         default:
